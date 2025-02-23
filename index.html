@@ -47,8 +47,6 @@
             font-size: 0.9em;
             color: #777;
         }
-
-        /* Simple controls section */
         .controls {
             display: flex;
             justify-content: center;
@@ -86,15 +84,10 @@
     </div>
 
     <script>
-        // Array of friends' names
-        let friends = ["Alice", "Bob", "Charlie", "David", "Eva"];
-
-        // Function to generate cards dynamically
+        let friends = ["sakshi", "janvi", "vaishnavi", "bhakti", "aarti"];
         function generateCards() {
             const container = document.getElementById("cards-container");
-            container.innerHTML = "";  // Clear previous cards
-
-            // Loop through the array and create a card for each name
+            container.innerHTML = "";
             friends.forEach(friend => {
                 const card = document.createElement("div");
                 card.className = "card";
@@ -110,30 +103,24 @@
                 container.appendChild(card);
             });
         }
-
-        // Call the function to generate cards on page load
         generateCards();
-
-        // Function to add a friend to the array and update cards
         function addFriend() {
             const friendName = document.getElementById("friend-name").value;
             if (friendName && !friends.includes(friendName)) {
                 friends.push(friendName);
-                generateCards();  // Regenerate cards with updated array
-                document.getElementById("friend-name").value = ""; // Clear input field
+                generateCards();  
+                document.getElementById("friend-name").value = "";
             } else {
                 alert("Please enter a valid name or name already exists!");
             }
         }
-
-        // Function to remove a friend from the array and update cards
         function removeFriend() {
             const friendName = document.getElementById("friend-name").value;
             const index = friends.indexOf(friendName);
             if (index !== -1) {
                 friends.splice(index, 1);
-                generateCards();  // Regenerate cards with updated array
-                document.getElementById("friend-name").value = ""; // Clear input field
+                generateCards();  
+                document.getElementById("friend-name").value = ""; 
             } else {
                 alert("Friend not found!");
             }
